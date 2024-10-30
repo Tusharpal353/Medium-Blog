@@ -1,4 +1,4 @@
-import { PrismaClient } from "@prisma/client/extension";
+import { PrismaClient } from "@prisma/client/edge";
 import { withAccelerate } from "@prisma/extension-accelerate";
 import { Hono } from "hono";
 import { verify } from "hono/jwt";
@@ -39,11 +39,11 @@ BlogRouters.post('/',async (c)=>{
       }).$extends(withAccelerate());
     
       
-      const blog=await prisma.blog.create({
+      const blog=await prisma.post.create({
         data:{
             title:body.title,
             content:body.content,
-            authorID:authorId
+            authorId:authorId
         }
       })
 
@@ -99,9 +99,9 @@ BlogRouters.get('/:id',async(c)=>{
       }).$extends(withAccelerate());
     
       
-     try{ const blog=await prisma.blog.findFirst({
+     try{ const blog=await prisma.post.findFirst({
           where:{
-            id: Number(id)
+            id: id
             
         },
       
