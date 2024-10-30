@@ -83,7 +83,7 @@ BlogRouters.get('/bulk',async(c)=>{
       }).$extends(withAccelerate());
     
       
-      const blog=await prisma.blog.findMany()
+      const blog=await prisma.post.findMany()
 
 
       return c.json({
