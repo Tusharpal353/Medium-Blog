@@ -28,3 +28,8 @@ Step 2
 
 step 3 
  - creating a Middleware to protect a end point
+
+
+
+
+ could have used Zod to do the validation but used another MODULE that will lie betwwen the frontend and the backend
