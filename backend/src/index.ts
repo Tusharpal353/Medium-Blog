@@ -4,6 +4,7 @@ import { SignatureKey } from "hono/utils/jwt/jws";
 import { userRouter } from './Routes/User';
 import { BlogRouters } from "./Routes/Blog";
 import { PrismaClient } from '@prisma/client'
+import {cors} from "hono/cors"
 
 const prisma = new PrismaClient()
 const app = new Hono<{
@@ -14,7 +15,7 @@ const app = new Hono<{
   };
 }>();
 
-
+app.use("/*",cors())
 //HOME ROUTE
 app.get("/", (c) => {
   return c.text("Hello Hono main route!");

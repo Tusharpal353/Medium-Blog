@@ -37,6 +37,7 @@ userRouter.post("/signup", async (c) => {
       data: {
         email: body.email,
         password: body.password,
+        name:body.name,
       },
     });
 
@@ -74,6 +75,7 @@ userRouter.post("/signin", async (c) => {
       where: {
         email: body.email,
         password: body.password,
+        
       },
     });
 
