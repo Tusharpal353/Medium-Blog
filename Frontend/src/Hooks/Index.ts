@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { BACKEND_URl } from "../config";
 import Blog from '../pages/Blog';
 
-interface Blog{
+export interface Blog{
     "content": string,
     "title": string
     "id": string,
@@ -11,6 +11,31 @@ interface Blog{
         "name": string
     }
 }
+
+
+export const useGetBlog=({id}:{id:string})=>{
+    const [blog,setBlog] = useState<Blog>()
+    const [loading,setLoading]=useState(true)
+
+    useEffect(()=>{
+        axios.get(`${BACKEND_URl}/api/v1/blog/${id}`,{
+            headers:{
+                Authorization:  localStorage.getItem("tocken")
+            }
+        }).then(
+            response => {setBlog(response.data.blog);
+                setLoading(false);
+            }
+        )
+    },[id])
+    return {
+        loading,blog
+    }
+
+
+}
+
+
 export const useBlog = () => {
 
 

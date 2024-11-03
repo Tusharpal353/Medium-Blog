@@ -99,19 +99,6 @@ BlogRouters.post("/", async (c) => {
 });
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* 
   const authHeader = c.req.header("authorization") || "";
   
@@ -202,6 +189,16 @@ BlogRouters.get("/:id", async (c) => {
       where: {
         id: id,
       },
+      select:{
+        id:true,
+        title:true,
+        content:true,
+        author:{
+          select:{
+            name:true   
+          }
+        }
+      }
     });
 
     return c.json({
