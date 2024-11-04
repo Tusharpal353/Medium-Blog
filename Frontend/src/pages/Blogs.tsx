@@ -1,7 +1,7 @@
 import BlogCard from "../component/BlogCard";
 import Header from "../component/Header";
 import {Shimmer} from "../component/Shimmer";
-import { Blog, useBlog } from "../Hooks/Index";
+import {  useBlog } from "../Hooks/Index";
 
 const Blogs = () => {
   const { loading, blogs } = useBlog();
@@ -46,3 +46,12 @@ const Blogs = () => {
 };
 
 export default Blogs;
+
+interface Blog{
+  "content": string,
+  "title": string
+  "id": string,
+  "author": {
+      "name"?: string
+  }
+}
