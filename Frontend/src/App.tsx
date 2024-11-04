@@ -5,7 +5,7 @@ import Signup from './pages/Signup'
 import Blog from './pages/Blog'
 import './App.css'
 import Blogs from './pages/Blogs'
-
+import Publish from './pages/Publish'
 function App() {
 
 
@@ -17,6 +17,7 @@ function App() {
           <Route path='/signup' element={<Signup/>}/> 
           <Route path='/blog/:id' element={<Blog/>}/>
           <Route path='/blogs' element={<Blogs/>}/>
+          <Route path='/publish' element={<Publish/>}/>
 
 
 
