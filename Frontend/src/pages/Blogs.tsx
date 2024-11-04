@@ -1,7 +1,7 @@
 import BlogCard from "../component/BlogCard";
 import Header from "../component/Header";
 import {Shimmer} from "../component/Shimmer";
-import { useBlog } from "../Hooks/Index";
+import { Blog, useBlog } from "../Hooks/Index";
 
 const Blogs = () => {
   const { loading, blogs } = useBlog();
@@ -29,7 +29,7 @@ const Blogs = () => {
       <Header />
       <div className="flex justify-center">
         <div className=" ">
-          {blogs.map((blog) => (
+          {blogs.map((blog:Blog) => (
             <BlogCard
             key={blog.id}
             id={blog.id}
