@@ -29,6 +29,12 @@ const Publish = () => {
       <div className="flex justify-start pt-2 max-w-3xl mx-auto">
         <button
           onClick={async () => {
+            const token = localStorage.getItem("token");
+            console.log(token)
+
+      // Log the token to check if it exists
+      console.log("JWT Token:", token);
+
             const response = await axios.post( `${BACKEND_URl}/api/v1/blog`,
               {
                 title,
@@ -55,13 +61,7 @@ const Publish = () => {
 };
 export default Publish;
 
-/* export function TitleEditor() {
-  return (
- 
-      
- 
-  );
-} */
+
 
 export function ContentEditor({onChange}:{onChange:(e:ChangeEvent<HTMLTextAreaElement>)=> void}) {
   return (
