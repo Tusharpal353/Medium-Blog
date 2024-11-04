@@ -17,24 +17,6 @@ export const BlogRouters = new Hono<{
 }>();
 
 
-/* BlogRouters.use("/*",async (c,next)=>{
-  const authHeader  = c.req.header("authorization") || "";
-  const user = await verify(authHeader,c.env.JWT_SECRET);
-
-  if(user){
-    c.set("userId",user.id)
-    next()
-  }else{
-    c.status(403);
-    return(
-      c.json({
-        message:"you are not logged in "
-      })
-    )
-  }
-
-
-}) */
 
   BlogRouters.use("/*", async (c, next) => {
     const authHeader = c.req.header("authorization") || "";
@@ -98,34 +80,6 @@ BlogRouters.post("/", async (c) => {
   });
 });
 
-
-/* 
-  const authHeader = c.req.header("authorization") || "";
-  
-  try {
-    const user = await verify(authHeader, c.env.JWT_SECRET);
-    console.log("user.id is " + user.id);
-    if (user.id) {
-      // Set the userId in the context
-      //  c.set("userId", user.id);
-      c.set("userId",String( user.id));
-      //c.variables.userId = user.id;
-      await next();
-    } else {
-      c.status(403);
-      return c.json(
-        {
-          message: "You are not logged in",
-        },
-        403
-      ); // Return a 403 Forbidden status
-    }
-  } catch (e) {
-    return c.json({
-      message: "you are not logged in ",
-    });
-  }
-}); */
 
 
 BlogRouters.put("/", async (c) => {
