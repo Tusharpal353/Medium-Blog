@@ -3,8 +3,8 @@ import Header from "./Header"
 import { Avatar } from './BlogCard';
 
 
-const FullBlog = ({blog}:{blog?:Blog | " "}) => {
-  if (!blog || blog === " ") {
+const FullBlog = ({blog}:{blog?:Blog | null}) => {
+  if (!blog ) {
     return <div>No blog data available.</div>; // Handle the case where blog is undefined or empty
   }
   return (
