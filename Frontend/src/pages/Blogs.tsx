@@ -1,7 +1,7 @@
 import BlogCard from "../component/BlogCard";
 import Header from "../component/Header";
 import {Shimmer} from "../component/Shimmer";
-import { useBlog } from "../Hooks";
+import { useBlog } from "../Hooks/Index";
 
 const Blogs = () => {
   const { loading, blogs } = useBlog();

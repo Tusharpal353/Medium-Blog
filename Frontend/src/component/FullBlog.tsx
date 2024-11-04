@@ -1,9 +1,12 @@
-import { Blog } from "../Hooks"
+import { Blog } from "../Hooks/Index"
 import Header from "./Header"
 import { Avatar } from './BlogCard';
 
 
-const FullBlog = ({blog}:{blog:Blog}) => {
+const FullBlog = ({blog}:{blog?:Blog | " "}) => {
+  if (!blog || blog === " ") {
+    return <div>No blog data available.</div>; // Handle the case where blog is undefined or empty
+  }
   return (
     <>
 

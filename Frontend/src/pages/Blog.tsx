@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import { useGetBlog } from "../Hooks";
+import { useGetBlog } from "../Hooks/Index"
 import FullBlog from "../component/FullBlog";
 import { BlogShimeer } from "../component/Shimmer";
 import Header from "../component/Header";
@@ -18,7 +18,7 @@ const Blog = () => {
     </div>;
   }
   return <div>
-
+    
     <FullBlog blog={blog}/>
   </div>;
 };
