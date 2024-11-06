@@ -5,12 +5,8 @@ Welcome to the Medium-Blog project! This is a simple blogging website inspired b
 ## Table of Contents
 
 - [Features](#features)
-- [Technologies Used](#technologies-used)
 - [Getting Started](#getting-started)
-- [Usage](#usage)
-- [Deployment](#deployment)
-- [Contributing](#contributing)
-- [License](#license)
+
 
 ## Features
 
